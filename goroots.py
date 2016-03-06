@@ -264,6 +264,11 @@ def get_go_version(version): # --get
     print("Done.")
 
 def set_go_version(version): # --set
+    """
+    Set and use a specific version of go.
+
+    @param: version (string) - the version number to set e.g. 1.5.3
+    """
     if version not in get_installed_versions():
         print(version, 'not installed.')
         print('use --get', version, 'to install this version')
