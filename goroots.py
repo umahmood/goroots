@@ -84,7 +84,8 @@ def download_file(path_to_download, url):
     """
     Given a valid URL downloads it.
 
-    @param: url (string) - the url to get.
+    @param: path_to_download (string) - the path to download the tar file to. 
+    @param: url (string)              - the url to get.
 
     @return: (string) - path to the downloaded file.
     """
