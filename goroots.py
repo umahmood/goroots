@@ -32,7 +32,7 @@ def get_golang_dls():
         response = requests.get(URI)
         if response.status_code is not requests.codes.ok:
             print("error making http request", response.status_code)
-            return {}
+            sys.exit(1)
         soup   = bs(response.text, 'html.parser')
         tables = soup.findAll('table')
     except (AttributeError, requests.ConnectionError, requests.Timeout) as e:
