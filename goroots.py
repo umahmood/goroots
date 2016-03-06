@@ -25,8 +25,6 @@ def get_golang_dls():
     Scrapes https://golang.org/dl/ and returns a tuple containing a list and 
     dictionary of available go downloads.
 
-    @param: past_versions (int) - the number of past versions to display.
-
     @return: tuple(list, dict)  - n versions from golang.org/dl   
     """    
     try:
