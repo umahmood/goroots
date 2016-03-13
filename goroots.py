@@ -146,24 +146,29 @@ def get_installed_versions():
 
 def run(goroot):
     """
-    Run a bash shell pointing to the specified GOROOT. Run ends the current
-    process when the bash shell exits.
+    Run a shell pointing to the specified GOROOT. Run ends the current process 
+    when the shell exits.
 
     @param: goroot (string) - The path to the target GOROOT.
     """
     try:
         path  = os.environ['PATH']
+        shell = os.environ['SHELL']
     except KeyError as e:
         if 'PATH' in e.args:
             path = ''
+        if 'SHELL' in e.args:
+            # fall back to bash 
+            shell = 'bash'
 
     os.environ['GOROOT'] = goroot
     os.environ['PATH']   = goroot + os.sep + 'bin:' + path 
 
     print('GOROOT set to', goroot)
     os.system('go version')
-    print("to go back to default go installation, type 'exit'")
-    ret = subprocess.call(['bash'])
+    print('shell', shell)
+    print('to go back to default go installation, type "exit"')
+    ret = subprocess.call([shell])
     sys.exit(ret)
 
 ################################################################################
