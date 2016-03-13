@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup as bs
 
 __author__ = "Usman Mahmood"
 __license__ = "MIT License"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 USER         = pwd.getpwuid( os.getuid() ).pw_name
 INSTALL_BASE = '/opt/goroots'
