@@ -151,10 +151,14 @@ def run(goroot):
 
     @param: goroot (string) - The path to the target GOROOT.
     """
-    path = os.environ["PATH"]
-    
-    os.environ["GOROOT"] = goroot
-    os.environ["PATH"]   = goroot + os.sep + 'bin:' + path 
+    try:
+        path  = os.environ['PATH']
+    except KeyError as e:
+        if 'PATH' in e.args:
+            path = ''
+
+    os.environ['GOROOT'] = goroot
+    os.environ['PATH']   = goroot + os.sep + 'bin:' + path 
 
     print('GOROOT set to', goroot)
     os.system('go version')
