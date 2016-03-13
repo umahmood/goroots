@@ -8,7 +8,7 @@ on your development box in a painless manner, then use Goroots.
 
 # Installation
 
-**Note**: Goroots is only avaiable on [Linux and OSX](#testing), and for developers using the Bash shell.<br/>
+**Note**: Goroots is only avaiable on [Linux and OSX](#testing).<br/>
 **Note**: Goroots installs all Go downloads to */opt/groot*. You will need create this directory and make it writable for the current user.
 
     $ git clone https://github.com/umahmood/goroots.git && cd goroots
